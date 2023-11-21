@@ -6,7 +6,7 @@ typedef struct cidade{
 typedef struct info{
 	int codigo; // codigo de referência para ajudar na inserção correta na árvore
 	CIDADE** cidades; // possivel lista de cidades
-	char pergunta[100]; // perguntas
+	char pergunta[200]; // perguntas
 }INFO;
 
 typedef struct arvore{
