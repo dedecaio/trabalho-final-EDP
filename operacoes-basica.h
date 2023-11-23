@@ -36,3 +36,4 @@ void imprime(ARVORE* arv){
 	} else
 		printf("\n Subárvore vazia!\n");
 }
+void remove(ARVORE** arvore, int codigo){}
