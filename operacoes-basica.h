@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void inserir(ARVORE** arvore, int codigo, char conteudo[]){
+void inserirPergunta(ARVORE** arvore, int codigo, char conteudo[]){
 	if(*arvore == NULL){
 		ARVORE *no = ( ARVORE * ) malloc( sizeof( ARVORE ));
 		if(no){
@@ -36,4 +36,6 @@ void imprime(ARVORE* arv){
 	} else
 		printf("\n Subárvore vazia!\n");
 }
+
+
 void remove(ARVORE** arvore, int codigo){}
