@@ -39,3 +39,18 @@ void imprime(ARVORE* arv){
 
 
 void remove(ARVORE** arvore, int codigo){}
+
+int buscar(ARVORE* arvore, int codigo)  {
+	if (arvore == NULL) {
+		return -1;
+	}
+	
+	if (codigo == arvore->info.codigo) {
+		return arvore->info.codigo;
+	} else if (codigo < arvore->info.codigo) {
+		return buscar(arvore->sube, codigo);
+	} else {
+		return buscar(arvore ->subd, codigo);
+	}
+}
+	
