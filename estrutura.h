@@ -1,12 +1,12 @@
 typedef struct cidade{
-	char nome[50], descricao[200];
+	char nome[50], descricao[400];
+	int codigo;
 	struct cidade* prox;
 } CIDADE;
 
 typedef struct info{
 	int codigo; // codigo de referência para ajudar na inserção correta na árvore
-	CIDADE** cidades; // possivel lista de cidades
-	char pergunta[200]; // perguntas
+	char conteudo[200]; // perguntas
 }INFO;
 
 typedef struct arvore{

@@ -1,20 +1,20 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 
 void percurso(ARVORE *arv){
 	int resposta;
 	if (arv == NULL){
-		printf("\nQue pena, parece que meus devs não colocaram nada no meu sistema. Desde já agradeço por me usar ;-;");
+		printf("\n- Que pena, parece que meus devs não colocaram nada no meu sistema. Desde já agradeço por me usar ;-;");
 		return;
 	}
-	printf("- %s", arv->info.pergunta);
+	printf("- %s ", arv->info.conteudo);
 	scanf("%d",&resposta);
-	if(resposta == 1)
+	if(resposta == 2)
 		percurso(arv->subd);
-	else if(resposta == 0)
+	else if(resposta == 1)
 		percurso(arv->sube);
 	else{
-		printf("Resposta inválida. Tente novamente");
+		printf("Resposta inválida. Tente novamente\n");
 		percurso(arv);
 	}
 }
