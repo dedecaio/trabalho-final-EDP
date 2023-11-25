@@ -35,6 +35,8 @@ int main(){
 //	imprimeCidades(resposta);
 	
 	imprimeCidades(cidades);
+	remove(&arvore);
+	imprime(arvore);
 	
 	return 0;
 }
