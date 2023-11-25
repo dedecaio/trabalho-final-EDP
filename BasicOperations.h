@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Inserir Conteudo na Arvore
 void insereConteudo(ARVORE** arvore, int codigo, char conteudo[], int ePergunta){
 	if(*arvore == NULL){
 		ARVORE *no = ( ARVORE * ) malloc( sizeof( ARVORE ));
@@ -38,9 +39,6 @@ void imprime(ARVORE* arv){
 		printf("\n Subárvore vazia!\n");
 }
 
-
-void remove(ARVORE** arvore, int codigo){}
-
 int buscar(ARVORE* arvore, int codigo)  {
 	if (arvore == NULL) {
 		return -1;
@@ -52,6 +50,22 @@ int buscar(ARVORE* arvore, int codigo)  {
 		return buscar(arvore->sube, codigo);
 	} else {
 		return buscar(arvore ->subd, codigo);
+	}
+}
+
+void remove(ARVORE** arvore, int codigo){
+	
+	if (*arvore != NULL) {
+		if (codigo < (*arvore)->info.codigo) {
+			remove(&(*arvore)->sube, codigo);	
+		} else if (codigo > (*arvore)->info.codigo) {
+			remove(&(*arvore)->subd, codigo);
+		} else {
+			ARVORE *aux = *arvore;
+			*arvore = NULL;
+			free(aux);
+			printf("\nRegistro excluido com sucesso!");
+		}
 	}
 }
 

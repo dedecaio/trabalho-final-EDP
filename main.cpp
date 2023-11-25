@@ -24,11 +24,12 @@ int main(){
 	"incluindo o Château d’Eau, o Jardim Botânico e Zoológico Municipal, a Ponte do Fandango, o Rio Jacuí e o"
 	" Parque Municipal da Cultura. Esses locais oferecem oportunidades para camping e trilhas.");
 	
-//	imprime(arvore);
 	zoey();
 	percurso(arvore);
 	printf("\n");
 	imprimeCidades(cidades);
+	remove(&arvore);
+	imprime(arvore);
 	
 	return 0;
 }
