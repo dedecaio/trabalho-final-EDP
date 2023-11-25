@@ -1,12 +1,8 @@
  #include <stdio.h>
 
 
-void percurso(ARVORE *arv){
+int percurso(ARVORE *arv){
 	int resposta;
-	if (arv == NULL){
-		printf("\nZoey - Que pena, parece que meus devs não colocaram nada no meu sistema. Desde já agradeço por me usar ;-;");
-		return;
-	}
 	printf("Zoey - %s ", arv->info.conteudo); 
 	// se for éPergunta = 1: 
 	if (arv->info.ePergunta == 1){
@@ -20,7 +16,7 @@ void percurso(ARVORE *arv){
 			percurso(arv);
 		}
 	}
-	// se nao for pergunta faz nada
+	return arv->info.codigo;
 	
 }
 
