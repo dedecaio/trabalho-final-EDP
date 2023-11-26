@@ -11,10 +11,10 @@ int main(){
 	CIDADE* cidades = NULL; // Lista de cidades
 		
 	carregaArvore(&arvore);
-//	
-//	salvaArvore(arvore);
-//	salvaListaCidades(cidades);
 	carregaListaCidades(&cidades);
+
+//	salvaArvore(arvore); // Função de salvar árvore
+//	salvaListaCidades(cidades); // Função de salvar a lista de cidades
 	zoey();
 	int codigoResposta = percurso(arvore); // a função percurso retorna a folha onde ela parou
 	printf("\n%d\n",codigoResposta);
