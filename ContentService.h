@@ -8,12 +8,12 @@ int percurso(ARVORE *arv){
 	if (arv->info.ePergunta == 1){
 		scanf("%d",&resposta);
 		if(resposta == 2)
-			percurso(arv->subd);
+			return percurso(arv->subd);
 		else if(resposta == 1)
-			percurso(arv->sube);
+			return percurso(arv->sube);
 		else{
 			printf("Zoey - Resposta inválida. Tente novamente\n");
-			percurso(arv);
+			return percurso(arv);
 		}
 	}
 	return arv->info.codigo;
