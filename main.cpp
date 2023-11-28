@@ -18,8 +18,8 @@ int main(){
 	zoey();
 	int codigoResposta = percurso(arvore); // a função percurso retorna a folha onde ela parou
 	printf("\n%d\n",codigoResposta);
-//	CIDADE* resposta = buscaCidades(cidades,codigoResposta)
-//	imprimeCidades(resposta);
+	CIDADE* resposta = buscaCidades(cidades,codigoResposta);
+	imprimeCidades(resposta);
 	
 	imprimeCidades(cidades);
 	

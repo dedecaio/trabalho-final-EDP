@@ -97,7 +97,20 @@ void imprimeCidades(CIDADE* cidades){
 			printf("\n%s",cidades->descricao);
 			cidades = cidades->prox;
 		}
+		
+		
+		
 	}
 	
+	
+}
+CIDADE* buscaCidades(CIDADE* cidades, int codigo){
+	CIDADE* lista = NULL;
+	while (cidades != NULL){
+		if (cidades->codigo == codigo){
+			insereCidade(&lista, cidades->codigo, cidades->nome, cidades->descricao);
+		}
+	}
+	 return lista;
 }
 	
