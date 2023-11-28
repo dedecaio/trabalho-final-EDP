@@ -1,6 +1,7 @@
-40 || "Você gosta de natureza ou de áreas mais turísticas? (1 = turística || 2 = natureza)" || 1
-60 || "O que você mais deseja, curtir bem pertinho da natureza em um hotel ou viver perigosamente em uma floresta? (1 = hotel || 2 = no meio do mato mesmo)" || 1
-70 || "Deseja acampar ou realizar uma trilha? (1 = acampar || 2 = trilha)" || 1
+40 || "Você prefere uma viagem que envolve explorar a cultura e atrações de uma cidade turística, ou você prefere uma experiência mais voltada para a natureza, com atividades ao ar livre como trilhas e camping? (1 = turística || 2 = natureza)" || 1
+60 || "Já que ama a natureza, você quer ter a experiência de explorar a natureza em uma hospedagem ou livre no meio dela? (1 = hotel || 2 =livre no meio dela)" || 1
+70 || "Você prefere uma aventura de trekking desafiadora que testa seus limites, ou uma trilha relaxante que permite que você aprecie a beleza da natureza ao seu próprio ritmo? (1 = acampar || 2 = trilha)" || 1
 80 || "Já que gosta tanto de natureza e quer muito viver perigosamente em trilhas no meio do nada. Estou te recomendando cidades em que você vai amar visitar, de acordo com o que me disse:" || 0
-20 || "Quer ir no óbvio, conhecendo cidades mais urbanas, ou quer ir para o interior? (1 = urbana || 2 = interior)" || 1
-30 || "Quer ir em feiras ou quer conhecer as festas municipais? (1 = feiras || 2 = festas)" || 1
+50 || "Aqui as cidades que sejam de acordo com trilhas com hospedagem: " || 0
+20 || "Você prefere explorar a agitação e as atrações culturais de uma cidade urbana, ou você prefere a tranquilidade e o charme de uma cidade do interior?  (1 = urbana || 2 = interior)" || 1
+30 || "Você prefere a animação e a energia de uma cidade conhecida por suas festas, ou você prefere a tranquilidade e a beleza natural de uma cidade na serra? (1 = festas || 2 = serra)" || 1

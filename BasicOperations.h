@@ -77,6 +77,7 @@ void insereCidade(CIDADE** cidades, int codigo, char nome[], char descricao[]){
         novo->codigo = codigo;					                           
         strcpy(novo->nome, nome);
         strcpy(novo->descricao, descricao);
+        novo->prox = NULL;
         if( *cidades == NULL )                              // verifica se a lista está vazia, caso sim terá que ajustar o início da lista
             *cidades = novo;                                // insere o primeiro registro
         else{
@@ -93,14 +94,13 @@ void insereCidade(CIDADE** cidades, int codigo, char nome[], char descricao[]){
 void imprimeCidades(CIDADE* cidades){
 	if(cidades != NULL){
 		while(cidades != NULL){
-			printf("%s",cidades->nome);
+			printf("\n%s",cidades->nome);
 			printf("\n%s",cidades->descricao);
 			cidades = cidades->prox;
 		}
 		
-		
-		
-	}
+	}else
+		printf("Lista vazia");
 	
 	
 }
@@ -110,7 +110,8 @@ CIDADE* buscaCidades(CIDADE* cidades, int codigo){
 		if (cidades->codigo == codigo){
 			insereCidade(&lista, cidades->codigo, cidades->nome, cidades->descricao);
 		}
+		cidades = cidades->prox;
 	}
-	 return lista;
+	return lista;
 }
 	

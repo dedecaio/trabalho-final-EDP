@@ -42,7 +42,7 @@ void carregaArvore(ARVORE** arv){
         return;
     }
     
-    char linha[500], conteudo[200];
+    char linha[600], conteudo[400];
     int codigo, ePergunta;
     while( fgets(linha, sizeof(linha), arquivo) != NULL ){
         sscanf(linha, "%d || \"%[^\"]\" || %d", &codigo, conteudo, &ePergunta);
@@ -85,7 +85,7 @@ void carregaListaCidades(CIDADE** cidades){
         return;
     }
     
-    char linha[600], nome[50], descricao[400];
+    char linha[800], nome[50], descricao[600];
     int codigo;
     while( fgets(linha, sizeof(linha), arquivo) != NULL ){
         sscanf(linha, "%d || \"%[^\"]\" || \"%[^\"]\"", &codigo, nome, descricao);

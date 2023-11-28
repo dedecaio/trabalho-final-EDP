@@ -21,7 +21,7 @@ int main(){
 	CIDADE* resposta = buscaCidades(cidades,codigoResposta);
 	imprimeCidades(resposta);
 	
-	imprimeCidades(cidades);
+//	imprimeCidades(cidades);
 	
 	return 0;
 }

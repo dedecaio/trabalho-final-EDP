@@ -23,6 +23,6 @@ int percurso(ARVORE *arv){
 void zoey(){
 	printf("Zoey - Olá, sou sua Assistente Virtual Zoey, estou aqui para te auxiliar. Vou te ajudar a encontrar o lugar perfeito para você viajar ok? :)");
 	printf("\nZoey - Só preciso que responda algumas perguntinhas...");
-	printf("\nPressione qualquer tecla para começar...");
+	printf("\nPressione enter para começar...");
 	getchar();
 }
