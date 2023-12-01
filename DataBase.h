@@ -30,7 +30,6 @@ void salvaArvore(ARVORE* arv){
     
     salvaDadosArvore(arv,arquivo);
     fclose( arquivo );
-    printf("Árvore salva");	
 	
 }
 
@@ -51,7 +50,6 @@ void carregaArvore(ARVORE** arv){
         insereConteudo(&(*arv), codigo, conteudo, ePergunta);
     }
     fclose( arquivo );                         // fecha o arquivo
-    printf( "Árvore carregada");
 }
 
 void salvaDadosLista(CIDADE* cidades, FILE* arquivo){
@@ -64,10 +62,6 @@ void salvaDadosLista(CIDADE* cidades, FILE* arquivo){
 void salvaListaCidades(CIDADE* cidades){
 	FILE *arquivo;
 	
-	if(cidades == NULL){
-		printf("Lista vazia");
-		return;
-	}
     arquivo = fopen( "Cidades.txt", "w" );
     
     if( arquivo == NULL ){                     // verifica se o arquivo foi criado corretamente
@@ -76,8 +70,7 @@ void salvaListaCidades(CIDADE* cidades){
     }
     
     salvaDadosLista(cidades,arquivo);
-    fclose( arquivo );
-    printf("Lista salva");	
+    fclose( arquivo );	
 }
 
 void carregaListaCidades(CIDADE** cidades){
@@ -94,8 +87,7 @@ void carregaListaCidades(CIDADE** cidades){
         sscanf(linha, "%d || \"%[^\"]\" || \"%[^\"]\"", &codigo, nome, descricao);
         insereCidade(&(*cidades), codigo, nome, descricao);
     }
-    fclose( arquivo );                         // fecha o arquivo
-    printf( "Lista carregada");
+    fclose( arquivo );         
 	
 }
 

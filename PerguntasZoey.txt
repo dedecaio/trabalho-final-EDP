@@ -1,7 +1,15 @@
-40 || "Você prefere uma viagem que envolve explorar a cultura e atrações de uma cidade turística, ou você prefere uma experiência mais voltada para a natureza, com atividades ao ar livre como trilhas e camping? (1 = turística || 2 = natureza)" || 1
-60 || "Já que ama a natureza, você quer ter a experiência de explorar a natureza em uma hospedagem ou livre no meio dela? (1 = hotel || 2 =livre no meio dela)" || 1
-70 || "Você prefere uma aventura de trekking desafiadora que testa seus limites, ou uma trilha relaxante que permite que você aprecie a beleza da natureza ao seu próprio ritmo? (1 = acampar || 2 = trilha)" || 1
-80 || "Já que gosta tanto de natureza e quer muito viver perigosamente em trilhas no meio do nada. Estou te recomendando cidades em que você vai amar visitar, de acordo com o que me disse:" || 0
-50 || "Aqui as cidades que sejam de acordo com trilhas com hospedagem: " || 0
-20 || "Você prefere explorar a agitação e as atrações culturais de uma cidade urbana, ou você prefere a tranquilidade e o charme de uma cidade do interior?  (1 = urbana || 2 = interior)" || 1
-30 || "Você prefere a animação e a energia de uma cidade conhecida por suas festas, ou você prefere a tranquilidade e a beleza natural de uma cidade na serra? (1 = festas || 2 = serra)" || 1
+80 || "Você prefere uma viagem que envolve explorar a cultura e atrações de uma cidade turística, ou você prefere uma experiência mais voltada para a natureza, com atividades ao ar livre como trilhas e camping? (1 - Turismo | 2 - Natureza)" || 1
+100 || "Já que ama a natureza, você quer ter a experiência de explorar a natureza em uma hospedagem ou livre no meio dela? (1 - Hospedagem | 2 - Livre na Natureza)" || 1
+120 || "Você prefere uma aventura de trekking desafiadora que testa seus limites, ou uma trilha relaxante que permite que você aprecie a beleza da natureza ao seu próprio ritmo? (1 - Trekking | 2 - Trilha)" || 1
+130 || "Vamos de trilha então, vou te mostrar cidades em que a trilha vai ser uma experiência incrível." || 0
+110 || "Para você que não sabe, trekking é o acampar na natureza ok? Então vou listar algumas cidades que possuem atrações perfeitas para isso. Mas por favor, tenha cuidado..." || 0
+90 || "Trilha com hospedagem... Vamos ver... Hmmm.... Achei! Aqui vai cidades maravilhosas para esta atividade:" || 0
+60 || "Você prefere explorar a agitação e as atrações culturais de uma cidade urbana, ou você prefere a tranquilidade e o charme de uma cidade do interior? (1 - Urbana | 2 - Interior)" || 1
+70 || "Você prefere a animação e a energia de uma cidade conhecida por suas festas, ou você prefere a tranquilidade e a beleza natural de uma cidade na serra? (1 - Serra | 2 - Festas)" || 1
+75 || "Festas municipais são uma das principais atrações no sul do país. Vou te falar algumas festas e você pensa se vai ou não, ok?" || 0
+65 || "A serra... O que falar dela né? Aquele frio... Aquelas paisagens maravilhosas... Vou recomendar algumas cidades que já fui e amei" || 0
+50 || "Já que quer agitação, entre ambientes e atrações, qual experiência mais se enquadra com o que deseja? (1 - Atrações | 2 - Ambientes)" || 1
+55 || "Olha... O pé na areia, a caipirinha, a água de coco e a cerveijinha... Difícil encontrar coisa melhor, vou te mostrar algumas praias maravilhosas para ir." || 0
+40 || "Beleza então, você prefere explorar a cultura de uma cidade ou fazer compras na cidade? (1 - Compras| 2 - Cultura)" || 1
+45 || "Ok, vou te dizer algumas cidades que eu encontrei aqui, talvez você goste..." || 0
+35 || "Já que gosta de compras, segue abaixo as cidades de compras:" || 0

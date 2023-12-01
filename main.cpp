@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <windows.h>
 #include "Struct.h"
 #include "BasicOperations.h"
 #include "ContentService.h"
@@ -8,20 +9,14 @@
 int main(){
 	setlocale(LC_ALL, "Portuguese");
 	ARVORE* arvore = NULL; 
-	CIDADE* cidades = NULL; // Lista de cidades
+	CIDADE* cidades = NULL;
 		
 	carregaArvore(&arvore);
 	carregaListaCidades(&cidades);
-
-//	salvaArvore(arvore); // Função de salvar árvore
-//	salvaListaCidades(cidades); // Função de salvar a lista de cidades
 	zoey();
-	int codigoResposta = percurso(arvore); // a função percurso retorna a folha onde ela parou
-	printf("\n%d\n",codigoResposta);
+	int codigoResposta = percurso(arvore);
 	CIDADE* resposta = buscaCidades(cidades,codigoResposta);
-	imprimeCidades(resposta);
-	
-//	imprimeCidades(cidades);
+	imprimeCidadesZoey(resposta);
 	
 	return 0;
 }

@@ -3,21 +3,41 @@
 #include <stdlib.h>
 #include "Struct.h"
 #include "BasicOperations.h"
-#include "ContentService.h"
 #include "DataBase.h"
 
-
-void entradaDadosCidade(int* codigo, char* nome[], char* descricao[]){
-	
+void insereCidadeDashboard(ARVORE* arv, CIDADE** cidades){
+	char nome[50], descricao[600];
+	int codigo;
+	printf("Código: ");
+	scanf("%d",&codigo);
+	if(buscar(arv,codigo) == -1){
+		printf("Nenhum registro com este código existe na árvore!");
+		return;
+	}
+	printf("Nome: ");
+	fflush(stdin);
+	gets(nome);
+	printf("Descrição: ");
+	fflush(stdin);
+	gets(descricao);
+    insereCidade(&(*cidades), codigo, nome, descricao);
 }
-
-void entradaDadosConteudo(int* codigo, char* conteudo[], int* ePergunta){
-	
+void insereArvoreDashboard(ARVORE** arvore){
+	char conteudo[400];
+	int ePergunta, codigo;
+	printf("Código: ");
+	scanf("%d", &codigo);
+	printf("Conteúdo: ");
+	fflush(stdin);
+	gets(conteudo);
+	printf("É pergunta? (1 - sim | 0 - não)");
+	scanf("%d",&ePergunta);
+	insereConteudo(&(*arvore),codigo,conteudo,ePergunta);
 }
 
 int main(){
 	setlocale(LC_ALL, "Portuguese");
-	int option, codigo;
+	int option;
 	ARVORE *arvore = NULL;
 	CIDADE *cidades= NULL;
 	
@@ -41,38 +61,20 @@ int main(){
          scanf( "%i", &option );
          switch( option ) {
             case 1:
-				char nome[50], descricao[600];
-				printf("Código: ");
-				scanf("%d",&codigo);
-				printf("Nome: ");
-				fflush(stdin);
-				gets(nome);
-				printf("Descrição: ");
-				fflush(stdin);
-				gets(descricao);
-                insereCidade(&cidades, codigo, nome, descricao);
+				insereCidadeDashboard(arvore,&cidades);
                 break;                                 
             case 2:
-            	char conteudo[400];
-				int ePergunta;
-				printf("Código: ");
-				scanf("%d", &codigo);
-				printf("Conteúdo: ");
-				fflush(stdin);
-				gets(conteudo);
-				printf("É pergunta? (1 - sim | 0 - não)");
-				scanf("%d",&ePergunta);
-				insereConteudo(&arvore,codigo,conteudo,ePergunta);
+            	insereArvoreDashboard(&arvore);
                 break;
             case 3: 
-            	// nao tem
+            	removeCidade(&cidades);
                 break;                     
                 
             case 4:
                 int codigo;
                 printf("Código: ");
                 scanf("%d",&codigo);
-                remove(&arvore, codigo);
+                removeArvore(&arvore, codigo);
                 break;
                   
             case 5:
@@ -84,11 +86,11 @@ int main(){
                 break;
 
             case 7:
-				imprime(arvore);
+            	imprimeCidades(cidades);
                 break;
 
             case 8:
-            	imprimeCidades(cidades);
+				imprime(arvore);
                 break;
 					                                
             case 0: // término do programa                                                 
@@ -96,8 +98,8 @@ int main(){
                 break;
                 
             default : 
-                    printf( "\n Digite uma opção!" );
-                    break;
+                printf( "\n Digite uma opção!" );
+                break;
         } // fim switch( op )
         
 		salvaArvore(arvore);
