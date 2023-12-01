@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <conio.h>
 #include <windows.h>
 #include "Struct.h"
 #include "BasicOperations.h"
@@ -17,6 +18,6 @@ int main(){
 	int codigoResposta = percurso(arvore);
 	CIDADE* resposta = buscaCidades(cidades,codigoResposta);
 	imprimeCidadesZoey(resposta);
-	
+	coletaFeedback();
 	return 0;
 }

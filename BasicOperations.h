@@ -29,7 +29,7 @@ void insereConteudo(ARVORE** arvore, int codigo, char conteudo[], int ePergunta)
 }
 
 void imprime(ARVORE* arv){
-	if( arv != NULL ) {              // verifica se a raiz é diferente de vazio
+	if(arv) {              // verifica se a raiz é diferente de vazio
 		printf( "\n >> sube " );       //"de %i", aux->info.codigo );
 		imprime( arv->sube ); // recursivo, segue pelo caminho da esquerda
 		printf( "\n Código.....: %d", arv->info.codigo );
@@ -57,7 +57,7 @@ int buscar(ARVORE* arvore, int codigo)  {
 
 void removeArvore(ARVORE** arvore, int codigo){
 	
-	if (*arvore != NULL) {
+	if (*arvore) {
 		if (codigo < (*arvore)->info.codigo) {
 			removeArvore(&(*arvore)->sube, codigo);	
 		} else if (codigo > (*arvore)->info.codigo) {
@@ -76,7 +76,7 @@ void removeArvore(ARVORE** arvore, int codigo){
 void insereCidade(CIDADE** cidades, int codigo, char nome[], char descricao[]){
 	CIDADE *novo = (CIDADE*) malloc (sizeof(CIDADE));
 	
-	if( novo != NULL ){										// verifica se conseguiu alocar memória para o novo registro
+	if(novo){										// verifica se conseguiu alocar memória para o novo registro
         novo->codigo = codigo;					                           
         strcpy(novo->nome, nome);
         strcpy(novo->descricao, descricao);
@@ -99,7 +99,7 @@ void insereCidade(CIDADE** cidades, int codigo, char nome[], char descricao[]){
 }
 
 void imprimeCidades(CIDADE* cidades){
-	if(cidades != NULL){
+	if(cidades){
 		while(cidades != NULL){
 			printf("\nId: %d | Nome: %s",cidades->id,cidades->nome);
 			printf("\nDescrição: %s",cidades->descricao);
@@ -108,8 +108,6 @@ void imprimeCidades(CIDADE* cidades){
 		
 	}else
 		printf("Lista vazia");
-	
-	
 }
 CIDADE* buscaCidades(CIDADE* cidades, int codigo){
 	CIDADE* lista = NULL;
@@ -155,4 +153,41 @@ void removeCidade(CIDADE** cidades){
 	    
     }else     
         printf( "\nLista de cidades vazia!" );
+}
+
+void insereFeedbackLista(FEEDBACK** feedback, char nome[], char email[], char comentario[]){
+	FEEDBACK* novo = (FEEDBACK *) malloc(sizeof(FEEDBACK));
+	
+	if(novo){
+		strcpy(novo->nome,nome);
+		strcpy(novo->email,email);
+		strcpy(novo->comentario,comentario);
+		novo->prox = NULL;
+		if(*feedback == NULL){
+			novo->id = 1;
+			*feedback = novo;
+		}else{
+			FEEDBACK *aux = *feedback;
+			while(aux->prox != NULL){
+				aux = aux->prox;
+			}
+			novo->id = aux->id;
+			novo->id++;
+			aux->prox = novo;
+		}
+	}else
+		printf("Lista cheia!");
+}
+
+void imprimeFeedback(FEEDBACK* feedback){
+	if(feedback){
+		while(feedback){
+			printf("\nId: %d | Nome: %s",feedback->id,feedback->nome);
+			printf("\nComentário: %s",feedback->comentario);
+			printf("\nContato: %s\n",feedback->email);
+			feedback = feedback->prox;
+		}
+		
+	}else
+		printf("Lista vazia");
 }

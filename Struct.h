@@ -16,5 +16,8 @@ typedef struct arvore{
 	struct arvore *sube;
 }ARVORE;
 
-
-
+typedef struct feedback{
+	int id;
+	char nome[30], email[50], comentario[400];
+	struct feedback* prox;	
+}FEEDBACK;

@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int percurso(ARVORE* arv){
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	int resposta;
@@ -48,5 +46,47 @@ void imprimeCidadesZoey(CIDADE* cidades){
 		}
 	}else{
 		printf("Zoey - Ao que parece, estou sem cidades! ;-;");
+	}
+}
+
+insereFeedback(char nome[], char email[], char descricao[]){
+	FILE* arquivo = fopen("Comentarios.txt", "a");
+	
+	fprintf(arquivo,"\"%s\" || \"%s\" || \"%s\"\n",nome,email,descricao);
+}
+
+void coletaFeedback(){
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	int resposta;
+	SetConsoleTextAttribute(hConsole, 13);
+	printf("\n\nZoey - Deseja deixar um comentário? (1 - Sim | 2 - Não) ");
+	SetConsoleTextAttribute(hConsole, 7);
+	scanf("%d", &resposta);
+	SetConsoleTextAttribute(hConsole, 13);
+	if(resposta == 1){
+		char nome[30],email[50],descricao[400];
+		printf("Zoey - Qual seu nome? ");
+		SetConsoleTextAttribute(hConsole, 7);
+		fflush(stdin);
+		gets(nome);
+		SetConsoleTextAttribute(hConsole, 13);
+		printf("Zoey - Qual seu email? ");
+		SetConsoleTextAttribute(hConsole, 7);
+		fflush(stdin);
+		gets(email);
+		SetConsoleTextAttribute(hConsole, 13);
+		printf("Zoey - Qual comentário deseja deixar? ");
+		SetConsoleTextAttribute(hConsole, 7);
+		fflush(stdin);
+		gets(descricao);
+		SetConsoleTextAttribute(hConsole, 13);
+		
+		insereFeedback(nome,email,descricao);
+		
+		printf("\nZoey - Obrigado por deixar seu feedback, meus criadores vão analisar com carinho! :)");
+	}else if(resposta == 2){
+		printf("Zoey - Tudo bem então. Até mais e boa viagem! :)");
+	}else{
+		printf("Zoey - Não entendi °-°");
 	}
 }

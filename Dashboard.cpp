@@ -39,10 +39,12 @@ int main(){
 	setlocale(LC_ALL, "Portuguese");
 	int option;
 	ARVORE *arvore = NULL;
-	CIDADE *cidades= NULL;
+	CIDADE *cidades = NULL;
+	FEEDBACK *feedback = NULL; 
 	
 	carregaArvore(&arvore);
 	carregaListaCidades(&cidades);
+	carregaFeedback(&feedback);
 	while( 1 ){
          printf( "\n /---------------------------------------------------/" ); 
          printf( "\n Dashboard da Zoey - Menu                             " );
@@ -50,10 +52,9 @@ int main(){
          printf( "\n [2] Incluir Pergunta                                 " );
          printf( "\n [3] Remover Cidade                                   " );
          printf( "\n [4] Remover Pergunta                                 " );
-         printf( "\n [5] Editar Cidade                                    " );                           
-         printf( "\n [6] Editar Pergunta                                  " );
-		 printf( "\n [7] Imprime Cidades                                  " ); 
-         printf( "\n [8] Imprime árvore de Perguntas                      " );
+		 printf( "\n [5] Imprime Cidades                                  " ); 
+         printf( "\n [6] Imprime árvore de Perguntas                      " );
+         printf( "\n [7] Ver Feedback da galera                           " );
          printf( "\n [0] Para sair do programa                            " );
          printf( "\n /---------------------------------------------------/" );      
          printf( "\n Opção: " );
@@ -62,10 +63,12 @@ int main(){
          switch( option ) {
             case 1:
 				insereCidadeDashboard(arvore,&cidades);
-                break;                                 
+                break;        
+				                         
             case 2:
             	insereArvoreDashboard(&arvore);
                 break;
+                
             case 3: 
             	removeCidade(&cidades);
                 break;                     
@@ -76,22 +79,18 @@ int main(){
                 scanf("%d",&codigo);
                 removeArvore(&arvore, codigo);
                 break;
-                  
+                
             case 5:
-            	// nao tem
-                break;
-                                                                                                                   
-            case 6:
-				// nao tem
-                break;
-
-            case 7:
             	imprimeCidades(cidades);
                 break;
 
-            case 8:
+            case 6:
 				imprime(arvore);
                 break;
+                
+            case 7:
+            	imprimeFeedback(feedback);
+            	break;
 					                                
             case 0: // término do programa                                                 
                 exit( 1 ); 

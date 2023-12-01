@@ -74,14 +74,13 @@ void salvaListaCidades(CIDADE* cidades){
 }
 
 void carregaListaCidades(CIDADE** cidades){
-	setlocale(LC_ALL, "Portuguese");
 	FILE *arquivo = fopen("Cidades.txt","r");
 	if ( arquivo == NULL ){                    // verifica se o arquivo foi aberto corretamente 
         printf( "\n Arquivo nao encontrado!" );
         return;
     }
     
-    char linha[800], nome[50], descricao[600];
+    char linha[690], nome[50], descricao[600];
     int codigo;
     while( fgets(linha, sizeof(linha), arquivo) != NULL ){
         sscanf(linha, "%d || \"%[^\"]\" || \"%[^\"]\"", &codigo, nome, descricao);
@@ -90,5 +89,16 @@ void carregaListaCidades(CIDADE** cidades){
     fclose( arquivo );         
 	
 }
+
+void carregaFeedback(FEEDBACK** feedback){
+	FILE *arquivo = fopen("Comentarios.txt","r");
+	char linha[500], nome[30], email[50],comentario[400];
+    while( fgets(linha, sizeof(linha), arquivo) != NULL ){
+        sscanf(linha, "\"%[^\"]\" || \"%[^\"]\" || \"%[^\"]\"", nome, email, comentario);
+        insereFeedbackLista(&(*feedback), nome, email, comentario);
+    }
+    fclose( arquivo );         
+}
+
 
 
