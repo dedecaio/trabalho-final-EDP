@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
+#include <locale.h>
 
 
 void salvaDadosArvore(ARVORE* arv, FILE* arquivo){
@@ -35,6 +36,7 @@ void salvaArvore(ARVORE* arv){
 
 
 void carregaArvore(ARVORE** arv){
+	setlocale(LC_ALL, "Portuguese");
     FILE *arquivo = fopen("PerguntasZoey.txt", "r");
     
     if ( arquivo == NULL ){                    // verifica se o arquivo foi aberto corretamente 
@@ -79,6 +81,7 @@ void salvaListaCidades(CIDADE* cidades){
 }
 
 void carregaListaCidades(CIDADE** cidades){
+	setlocale(LC_ALL, "Portuguese");
 	FILE *arquivo = fopen("Cidades.txt","r");
 	if ( arquivo == NULL ){                    // verifica se o arquivo foi aberto corretamente 
         printf( "\n Arquivo nao encontrado!" );
