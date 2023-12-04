@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <locale.h>
-#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <windows.h>
 #include "Struct.h"
 #include "BasicOperations.h"
+#include "ContentService.h"
 #include "DataBase.h"
 
 void insereCidadeDashboard(ARVORE* arv, CIDADE** cidades){
@@ -51,7 +54,7 @@ int main(){
          printf( "\n [1] Incluir Cidade                                   " );
          printf( "\n [2] Incluir Pergunta                                 " );
          printf( "\n [3] Remover Cidade                                   " );
-         printf( "\n [4] Remover Pergunta                                 " );
+         printf( "\n [4] Remover Conteúdo                                 " );
 		 printf( "\n [5] Imprime Cidades                                  " ); 
          printf( "\n [6] Imprime árvore de Perguntas                      " );
          printf( "\n [7] Ver Feedback da galera                           " );

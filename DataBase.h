@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <conio.h>
-#include <string.h>
-#include <locale.h>
-
-
 void salvaDadosArvore(ARVORE* arv, FILE* arquivo){
 	fprintf(arquivo, "%d || \"%s\" || %d\n", arv->info.codigo, arv->info.conteudo, arv->info.ePergunta);
 	

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <string.h>
 #include <conio.h>
 #include <windows.h>
 #include "Struct.h"

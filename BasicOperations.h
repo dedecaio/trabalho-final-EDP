@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 // Inserir Conteudo na Arvore
 void insereConteudo(ARVORE** arvore, int codigo, char conteudo[], int ePergunta){
 	if(*arvore == NULL){
