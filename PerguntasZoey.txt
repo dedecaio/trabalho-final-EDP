@@ -1,10 +1,10 @@
-80 || "Você prefere uma viagem que envolve explorar a cultura e atrações de uma cidade turística, ou você prefere uma experiência mais voltada para a natureza, com atividades ao ar livre como trilhas e camping? (1 - Turismo | 2 - Natureza)" || 1
-100 || "Já que ama a natureza, você quer ter a experiência de explorar a natureza em uma hospedagem ou livre no meio dela? (1 - Hospedagem | 2 - Livre na Natureza)" || 1
+80 || "Primeiramente, você prefere uma viagem que envolva explorar a cultura e atrações de uma cidade turística, ou você prefere uma experiência mais quieta, voltada para a natureza, com atividades ao ar livre como trilhas e camping? (1 - Turismo | 2 - Natureza)" || 1
+100 || "Já que você ama a natureza, gostaria de ter a experiência de explorar a natureza por meio de parada em alguma hospedagem próxima ou gostaria de estar livre no meio da natureza? (1 - Hospedagem | 2 - Livre na Natureza)" || 1
 120 || "Você prefere uma aventura de trekking desafiadora que testa seus limites, ou uma trilha relaxante que permite que você aprecie a beleza da natureza ao seu próprio ritmo? (1 - Trekking | 2 - Trilha)" || 1
 130 || "Vamos de trilha então, vou te mostrar cidades em que a trilha vai ser uma experiência incrível." || 0
 110 || "Para você que não sabe, trekking é o acampar na natureza ok? Então vou listar algumas cidades que possuem atrações perfeitas para isso. Mas por favor, tenha cuidado..." || 0
 90 || "Trilha com hospedagem... Vamos ver... Hmmm.... Achei! Aqui vai cidades maravilhosas para esta atividade:" || 0
-60 || "Você prefere explorar a agitação e as atrações culturais de uma cidade urbana, ou você prefere a tranquilidade e o charme de uma cidade do interior? (1 - Urbana | 2 - Interior)" || 1
+60 || "Entendi... Então você prefere explorar a agitação e as atrações culturais de uma cidade urbana, ou você prefere a tranquilidade e o charme de uma cidade do interior? (1 - Urbana | 2 - Interior)" || 1
 70 || "Você prefere a animação e a energia de uma cidade conhecida por suas festas, ou você prefere a tranquilidade e a beleza natural de uma cidade na serra? (1 - Serra | 2 - Festas)" || 1
 75 || "Festas municipais são uma das principais atrações no sul do país. Vou te falar algumas festas e você pensa se vai ou não, ok?" || 0
 65 || "A serra... O que falar dela né? Aquele frio... Aquelas paisagens maravilhosas... Vou recomendar algumas cidades que já fui e amei" || 0

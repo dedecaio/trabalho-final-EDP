@@ -8,6 +8,7 @@ int percurso(ARVORE* arv){  // função responsável por realizar o percurso da Zoe
 	}
 	
 	printf("\nZoey - %s ", arv->info.conteudo);   // printa o conteúdo do registro da árvore
+	printf("\n");
 	// se for ePergunta = 1: 
 	if (arv->info.ePergunta == 1){ 
 		SetConsoleTextAttribute(hConsole, 7);  // cor branca
@@ -28,8 +29,8 @@ int percurso(ARVORE* arv){  // função responsável por realizar o percurso da Zoe
 void zoey(){  // função de boas vindas da Zoey
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, 13);
-	printf("Zoey - Olá, sou sua Assistente Virtual Zoey, estou aqui para te auxiliar. Vou te ajudar a encontrar o lugar perfeito para você viajar ok? :)");
-	printf("\nZoey - Só preciso que responda algumas perguntinhas...");
+	printf("Zoey - Olá, sou sua Assistente Virtual Zoey, estou aqui para te auxiliar. Vou te ajudar a encontrar o lugar perfeito para você viajar ok? :)\n");
+	printf("\nZoey - Só preciso que responda algumas perguntinhas...\n");
 	SetConsoleTextAttribute(hConsole, 7);
 	printf("\nPressione enter para começar...");
 	getchar();
@@ -37,7 +38,7 @@ void zoey(){  // função de boas vindas da Zoey
 
 void imprimeCidadesZoey(CIDADE* cidades){
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	printf("\n\n");
+	printf("\n");
 	if(cidades){ // só printa os dados se tiver cidade
 		while(cidades){ // enquanto cidade for diferente de NULL imprime
 			SetConsoleTextAttribute(hConsole, 13); // cor lilás
@@ -51,7 +52,7 @@ void imprimeCidadesZoey(CIDADE* cidades){
 		}
 	}else{
 		SetConsoleTextAttribute(hConsole, 13); // cor lilás
-		printf("Zoey - Ao que parece, estou sem cidades! ;-;");
+		printf("Zoey - Ao que parece, estou sem cidades! :(");
 	}
 }
 
@@ -65,7 +66,7 @@ void coletaFeedback(){
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	int resposta;
 	SetConsoleTextAttribute(hConsole, 13); // cor lilás
-	printf("\n\nZoey - Deseja deixar um comentário? (1 - Sim | 2 - Não) ");
+	printf("\n\nZoey - Deseja deixar um comentário? (1 - Sim | 2 - Não)\n");
 	SetConsoleTextAttribute(hConsole, 7); // cor branca
 	scanf("%d", &resposta); // lê a resposta
 	SetConsoleTextAttribute(hConsole, 13); // cor lilás
