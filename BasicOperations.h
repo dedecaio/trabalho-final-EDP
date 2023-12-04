@@ -1,4 +1,3 @@
-// Inserir Conteudo na Arvore
 void insereConteudo(ARVORE** arvore, int codigo, char conteudo[], int ePergunta){
 	if(*arvore == NULL){
 		ARVORE *no = ( ARVORE * ) malloc( sizeof( ARVORE ));
@@ -17,9 +16,8 @@ void insereConteudo(ARVORE** arvore, int codigo, char conteudo[], int ePergunta)
 		else if((*arvore)->info.codigo < codigo)
 			insereConteudo(&(*arvore)->subd, codigo, conteudo,ePergunta);
 		else{
-			
+			// o registro já foi inserido	
 		}
-//			printf("Registro já inserido");
 		
 	}
 }
@@ -42,7 +40,7 @@ int buscar(ARVORE* arvore, int codigo)  {
 		return -1;
 	}
 	
-	if (codigo == arvore->info.codigo) {
+	if (codigo == arvore->info.codigo && arvore->info.ePergunta == 0) {
 		return 1;
 	} else if (codigo < arvore->info.codigo) {
 		return buscar(arvore->sube, codigo);

@@ -14,7 +14,7 @@ void insereCidadeDashboard(ARVORE* arv, CIDADE** cidades){
 	printf("Código: ");
 	scanf("%d",&codigo);
 	if(buscar(arv,codigo) == -1){
-		printf("Nenhum registro com este código existe na árvore!");
+		printf("Nenhum Registro foi encontrado ou o Registro não se configura como pergunta!");
 		return;
 	}
 	printf("Nome: ");
