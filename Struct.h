@@ -1,7 +1,7 @@
 typedef struct cidade{
 	char nome[100], descricao[800]; // nome e descrição de cada cidade
-	int id,codigo;					  // codigo que será o mesmo da folha da árvore
-	struct cidade* prox;
+	int id,codigo;					  // codigo que será o mesmo da folha da árvore e o id para que cada registro seja único
+	struct cidade* prox;				 // Ponteiro para a próxima cidade
 } CIDADE;
 
 typedef struct info{
@@ -11,13 +11,13 @@ typedef struct info{
 }INFO;
 
 typedef struct arvore{
-	INFO info;
-	struct arvore *subd;
-	struct arvore *sube;
+	INFO info;  // informação que cada registro da árvore terá
+	struct arvore *subd;   // Ponteiro para a sub-árvore a direita 
+	struct arvore *sube;   // Ponteiro para a sub-árvore a esquerda
 }ARVORE;
 
 typedef struct feedback{
-	int id;
-	char nome[30], email[50], comentario[400];
-	struct feedback* prox;	
+	int id; // id para os comentários
+	char nome[30], email[50], comentario[400]; // os dados de cada feedback
+	struct feedback* prox;	// ponteiro para o próximo comentário
 }FEEDBACK;
