@@ -80,7 +80,7 @@ void carregaListaCidades(CIDADE** cidades){
         return;
     }
     
-    char linha[690], nome[50], descricao[600];
+    char linha[1000], nome[100], descricao[800];
     int codigo;
     while( fgets(linha, sizeof(linha), arquivo) != NULL ){
         sscanf(linha, "%d || \"%[^\"]\" || \"%[^\"]\"", &codigo, nome, descricao);
