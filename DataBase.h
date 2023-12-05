@@ -74,7 +74,7 @@ void carregaListaCidades(CIDADE** cidades){ // carregar lista de cidades do txt
         return;
     }
     
-    char linha[1000], nome[100], descricao[800];
+    char linha[1200], nome[100], descricao[1000];
     int codigo;
     while( fgets(linha, sizeof(linha), arquivo) != NULL ){ // lê todas as linhas do arquivo
         sscanf(linha, "%d || \"%[^\"]\" || \"%[^\"]\"", &codigo, nome, descricao); // lê os dados da linha

@@ -1,5 +1,5 @@
 typedef struct cidade{
-	char nome[100], descricao[800]; // nome e descrição de cada cidade
+	char nome[100], descricao[1000]; // nome e descrição de cada cidade
 	int id,codigo;					  // codigo que será o mesmo da folha da árvore e o id para que cada registro seja único
 	struct cidade* prox;				 // Ponteiro para a próxima cidade
 } CIDADE;

@@ -9,7 +9,7 @@
 #include "DataBase.h"
 
 void insereCidadeDashboard(ARVORE* arv, CIDADE** cidades){  // função que coleta todos os dados para inserir na lista de cidades
-	char nome[50], descricao[600];
+	char nome[100], descricao[1000];
 	int codigo;
 	printf("Código: ");
 	scanf("%d",&codigo); // lê código
