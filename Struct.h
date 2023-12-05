@@ -21,3 +21,8 @@ typedef struct feedback{
 	char nome[30], email[50], comentario[400]; // os dados de cada feedback
 	struct feedback* prox;	// ponteiro para o próximo comentário
 }FEEDBACK;
+
+
+
+
+

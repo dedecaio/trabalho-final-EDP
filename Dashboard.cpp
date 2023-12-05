@@ -8,90 +8,98 @@
 #include "ContentService.h"
 #include "DataBase.h"
 
-void insereCidadeDashboard(ARVORE* arv, CIDADE** cidades){
+void insereCidadeDashboard(ARVORE* arv, CIDADE** cidades){  // função que coleta todos os dados para inserir na lista de cidades
 	char nome[50], descricao[600];
 	int codigo;
 	printf("Código: ");
-	scanf("%d",&codigo);
-	if(buscar(arv,codigo) == -1){
-		printf("Nenhum Registro foi encontrado ou o Registro não se configura como pergunta!");
+	scanf("%d",&codigo); // lê código
+	if(buscar(arv,codigo) == -1){ // verifica se o registro existe e não é uma pergunta
+		printf("Nenhum Registro foi encontrado ou o Registro se configura como pergunta!");
 		return;
 	}
 	printf("Nome: ");
 	fflush(stdin);
-	gets(nome);
+	gets(nome); // lê nome
 	printf("Descrição: ");
 	fflush(stdin);
-	gets(descricao);
-    insereCidade(&(*cidades), codigo, nome, descricao);
+	gets(descricao); // lê descrição
+    insereCidade(&(*cidades), codigo, nome, descricao); // insere
 }
-void insereArvoreDashboard(ARVORE** arvore){
+void insereArvoreDashboard(ARVORE** arvore){ // função que coleta todos os dados para inserir na árvore
 	char conteudo[400];
 	int ePergunta, codigo;
 	printf("Código: ");
-	scanf("%d", &codigo);
+	scanf("%d", &codigo); // lê código
 	printf("Conteúdo: ");
 	fflush(stdin);
-	gets(conteudo);
-	printf("É pergunta? (1 - sim | 0 - não)");
-	scanf("%d",&ePergunta);
-	insereConteudo(&(*arvore),codigo,conteudo,ePergunta);
+	gets(conteudo); // lê conteudo do registro
+	printf("É pergunta? (1 - sim | 0 - não) ");
+	scanf("%d",&ePergunta); // lê se é ou não pergunta
+	while (ePergunta < 0 || ePergunta > 1){  // só permite 0 ou 1
+		printf("Resposta inválida. É pergunta? (1 - sim | 0 - não) ");
+		scanf("%d",&ePergunta); // lê se é ou não pergunta
+	}
+	insereConteudo(&(*arvore),codigo,conteudo,ePergunta); // insere tudo na árvore
 }
 
 int main(){
 	setlocale(LC_ALL, "Portuguese");
 	int option;
-	ARVORE *arvore = NULL;
-	CIDADE *cidades = NULL;
-	FEEDBACK *feedback = NULL; 
+	ARVORE *arvore = NULL; // cria árvore
+	CIDADE *cidades = NULL; // cria lista de cidades
+	FEEDBACK *feedback = NULL; // cria lista de feedbacks
 	
-	carregaArvore(&arvore);
+	// carrega os dados do txt
+	carregaArvore(&arvore); 
 	carregaListaCidades(&cidades);
 	carregaFeedback(&feedback);
+	// 
+	
+	// printa menu
 	while( 1 ){
          printf( "\n /---------------------------------------------------/" ); 
          printf( "\n Dashboard da Zoey - Menu                             " );
-         printf( "\n [1] Incluir Cidade                                   " );
-         printf( "\n [2] Incluir Pergunta                                 " );
+         printf( "\n [1] Inserir Cidade                                   " );
+         printf( "\n [2] Inserir Pergunta                                 " );
          printf( "\n [3] Remover Cidade                                   " );
          printf( "\n [4] Remover Conteúdo                                 " );
-		 printf( "\n [5] Imprime Cidades                                  " ); 
-         printf( "\n [6] Imprime árvore de Perguntas                      " );
+		 printf( "\n [5] Imprimir Cidades                                 " ); 
+         printf( "\n [6] Imprimir árvore                                  " );
          printf( "\n [7] Ver Feedback da galera                           " );
-         printf( "\n [0] Para sair do programa                            " );
+         printf( "\n [0] Sair do Menu                                     " );
          printf( "\n /---------------------------------------------------/" );      
          printf( "\n Opção: " );
          fflush( stdin );
-         scanf( "%i", &option );
-         switch( option ) {
-            case 1:
+         scanf( "%i", &option ); // lê qual a opção do menu
+         switch( option ) { 
+            case 1: // inserir Cidade
 				insereCidadeDashboard(arvore,&cidades);
                 break;        
 				                         
-            case 2:
+            case 2: // inserir conteúdo na árvore
             	insereArvoreDashboard(&arvore);
                 break;
                 
-            case 3: 
+            case 3: // remover cidade por id
             	removeCidade(&cidades);
                 break;                     
                 
-            case 4:
+            case 4: // remover registro da árvore por código
                 int codigo;
                 printf("Código: ");
                 scanf("%d",&codigo);
                 removeArvore(&arvore, codigo);
                 break;
                 
-            case 5:
+            case 5: // imprime a lista de cidades
             	imprimeCidades(cidades);
                 break;
 
-            case 6:
+            case 6: // imprime a árvore
 				imprime(arvore);
                 break;
                 
-            case 7:
+            case 7: // imprime o feedback
             	imprimeFeedback(feedback);
             	break;
 					                                
@@ -99,17 +107,19 @@ int main(){
                 exit( 1 ); 
                 break;
                 
-            default : 
+            default : // opção inválida
                 printf( "\n Digite uma opção!" );
                 break;
-        } // fim switch( op )
+        }
         
+        //salva os dados 
 		salvaArvore(arvore);
 		salvaListaCidades(cidades);
+		//
         printf("\n");
         system("pause");       // parada da tela
         system( "cls" ); // limpar tela
-     } // fim do while( 1 )
+    }
 	
 	return 0;
 }

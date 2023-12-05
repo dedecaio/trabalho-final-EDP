@@ -1,6 +1,0 @@
-"Caio" || "caio@gmail.com" || "oi moco"
-"Ramon" || "ramon@gmail.com" || "Parabens"
-"Luis Fernando" || "lufespi1221@gmail.com" || "Parab‚ns por esse projeto"
-"Caio Fl“res" || "caio@gmail.com" || "blablabla"
-"Caio" || "caio@gmail.com" || "blablablabla"
-"Luis" || "luis.souza@mor.com.br" || "Mais cidades pf, faltou coisa"

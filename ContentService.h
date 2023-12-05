@@ -1,7 +1,7 @@
 int percurso(ARVORE* arv){  // função responsável por realizar o percurso da Zoey
-	int resposta;
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, 13);
+	int resposta; // resposta do usuário
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // variável que pega o terminal
+	SetConsoleTextAttribute(hConsole, 13);  // função que altera a cor do terminal
 	if (arv == NULL){
 		printf("\nZoey - Infelizmente estou sem nada em meu sistema. Sinto muito por isso! 1-1");
 		return -1;
@@ -33,7 +33,7 @@ void zoey(){  // função de boas vindas da Zoey
 	printf("\nZoey - Só preciso que responda algumas perguntinhas...\n");
 	SetConsoleTextAttribute(hConsole, 7);
 	printf("\nPressione enter para começar...");
-	getchar();
+	getchar(); // para a tela e espera pelo usuário teclar algo  
 }
 
 void imprimeCidadesZoey(CIDADE* cidades){
